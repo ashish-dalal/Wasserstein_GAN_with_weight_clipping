@@ -3,6 +3,7 @@ from torch import nn
 import torchvision
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
+import generator, wasserstein_critic
 
 
 def initialize_weights(model):
