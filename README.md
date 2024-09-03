@@ -31,13 +31,13 @@ The WGAN model utilizes architecture as proposed in "Unsupervised Representation
 
 The training process was monitored by generating samples from a batch of fixed noise at regular intervals. A timelapse of these generated samples is available, showcasing the model's progression over time. Images were captured every 100th batch during each epoch, allowing you to visualize how the quality and diversity of the generated data improve as the training progresses.
 
+![Generated Image](output_F4IVQ1.gif)
+
 The timelapse demonstrates:
 
 - **Early Epochs**: The model starts by generating solid-colored images very early in the training. This is a common behavior as the model begins to learn the basic structure of the data distribution.
 - **Mid to Late Epochs**: The model begins to produce more coherent and realistic outputs, with finer details and improved structure.
 - **Final Epochs**: The generated samples closely resemble the target data distribution, demonstrating the effectiveness of the WGAN architecture with weight clipping.
-
-![Generated Image](output_F4IVQ1.gif)
 
 ## License
 
