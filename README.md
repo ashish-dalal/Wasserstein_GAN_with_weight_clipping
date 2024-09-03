@@ -17,10 +17,23 @@ This project implements the Wasserstein GAN with weight clipping, as proposed in
 
 ### Architecture Details
 
-The WGAN model utilizes architecture as proposed in "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks" paper and aims to stabilize the model training using wasserstein distance and weight clipping techniques as described in "Wasserstein GAN" paper: 
+The WGAN model utilizes architecture as proposed in "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks" paper and aims to stabilize the model training using wasserstein distance and enforcing the 1-Lipschitz continuity using weight clipping as described in "Wasserstein GAN" paper: 
 
 - **Generator**: Utilizes transposed convolutions to upsample the input noise vector into a desired output image size. The generator employs ReLU activation functions, except for the output layer which uses a Tanh activation function.
 - **Discriminator (Critic)**: A convolutional neural network that distinguishes between real and fake samples. It uses Leaky ReLU activation functions. Unlike traditional GANs, the discriminator's output is not a probability but rather a real-valued score, which represents the Wasserstein distance.
+
+### Hyperparameters
+
+The key hyperparameters used in the code are:
+
+- **Learning Rate**: 5e-5
+- **Optimizer**: RMSprop
+- **Batch Size**: 64
+- **Noise Vector Dimension**: 128
+- **Image Size**: 64x64
+- **Image Channels**: 3
+- **Number of Epochs**: 5 (can be adjusted based on dataset size and training resources)
+- **Weight Clip**: 0.01
 
 ### Key Differences from Standard GANs
 
